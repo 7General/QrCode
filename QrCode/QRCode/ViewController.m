@@ -30,7 +30,7 @@
     
     UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 300, self.view.bounds.size.width, 400)];
     [self.view addSubview:imageView];
-    imageView.image = [UIImage qrImageForString:@"wirte qrcode file" imageSize:self.view.bounds.size.width logoImageSize:0];
+    imageView.image = [UIImage qrImageForString:@"wirte qrcode file" imageSize:self.view.bounds.size.width logoImageSize:100 withLogoName:@"1.jpg"];
     
 }
 

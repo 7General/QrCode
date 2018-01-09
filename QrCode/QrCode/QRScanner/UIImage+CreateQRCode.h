@@ -18,5 +18,8 @@
  @param waterImagesize 中间logo宽度
  @return 二维码加图片image
  */
-+ (UIImage *)qrImageForString:(NSString *)string imageSize:(CGFloat)Imagesize logoImageSize:(CGFloat)waterImagesize;
++ (UIImage *)qrImageForString:(NSString *)string
+                    imageSize:(CGFloat)Imagesize
+                logoImageSize:(CGFloat)waterImagesize
+                 withLogoName:(NSString *)logoName;
 @end

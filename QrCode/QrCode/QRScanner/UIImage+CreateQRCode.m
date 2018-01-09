@@ -17,18 +17,26 @@
  @param waterImagesize 中间logo宽度
  @return 二维码加图片image
  */
-+ (UIImage *)qrImageForString:(NSString *)string imageSize:(CGFloat)Imagesize logoImageSize:(CGFloat)waterImagesize{
++ (UIImage *)qrImageForString:(NSString *)string
+                    imageSize:(CGFloat)Imagesize
+                logoImageSize:(CGFloat)waterImagesize
+                 withLogoName:(NSString *)logoName{
     CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
     [filter setDefaults];
     NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
     [filter setValue:data forKey:@"inputMessage"];//通过kvo方式给一个字符串，生成二维码
     [filter setValue:@"H" forKey:@"inputCorrectionLevel"];//设置二维码的纠错水平，越高纠错水平越高，可以污损的范围越大
     CIImage *outPutImage = [filter outputImage];//拿到二维码图片
-    return [[self alloc] createNonInterpolatedUIImageFormCIImage:outPutImage withSize:Imagesize waterImageSize:waterImagesize];
+    return [[self alloc] createNonInterpolatedUIImageFormCIImage:outPutImage
+                                                        withSize:Imagesize
+                                                  waterImageSize:waterImagesize withLogoName:logoName];
 }
 
 
-- (UIImage *)createNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat) size waterImageSize:(CGFloat)waterImagesize{
+- (UIImage *)createNonInterpolatedUIImageFormCIImage:(CIImage *)image
+                                            withSize:(CGFloat) size
+                                      waterImageSize:(CGFloat)waterImagesize
+                                        withLogoName:(NSString *)logoName{
     CGRect extent = CGRectIntegral(image.extent);
     CGFloat scale = MIN(size/CGRectGetWidth(extent), size/CGRectGetHeight(extent));
     
@@ -61,7 +69,7 @@
     UIGraphicsBeginImageContextWithOptions(outputImage.size, NO, [[UIScreen mainScreen] scale]);
     [outputImage drawInRect:CGRectMake(0,0 , size, size)];
     //logo图
-    UIImage *waterimage = [UIImage imageWithImageName:@"1.jpg" imageWidth:waterImagesize imageHeight:waterImagesize borderWidth:6 borderColor:[UIColor redColor]];
+    UIImage *waterimage = [UIImage imageWithImageName:logoName imageWidth:waterImagesize imageHeight:waterImagesize borderWidth:6 borderColor:[UIColor redColor]];
     //[UIImage imageNamed:@"1.jpg"];
     
     //把logo图画到生成的二维码图片上，注意尺寸不要太大（最大不超过二维码图片的%30），太大会造成扫不出来
