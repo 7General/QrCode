@@ -90,7 +90,11 @@
  *
  *  @return 带边框的图片
  */
-+(UIImage *)imageWithImageName:(NSString *)imageName imageWidth:(CGFloat)imageWidth imageHeight:(CGFloat)imageHeight borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor{
++(UIImage *)imageWithImageName:(NSString *)imageName
+                    imageWidth:(CGFloat)imageWidth
+                   imageHeight:(CGFloat)imageHeight
+                   borderWidth:(CGFloat)borderWidth
+                   borderColor:(UIColor *)borderColor{
     UIImage *image = [UIImage imageNamed:imageName];
     CGSize size = CGSizeMake(imageWidth + 2 * borderWidth, imageHeight + 2 * borderWidth);
     UIGraphicsBeginImageContextWithOptions(size, NO, 0);
