@@ -16,6 +16,11 @@
 		2229933E20046F2200105A15 /* QRScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2229933D20046F2200105A15 /* QRScannerViewController.m */; };
 		222993412004727C00105A15 /* wq_code_scanner_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2229933F2004727C00105A15 /* wq_code_scanner_line@2x.png */; };
 		222993422004727C00105A15 /* wq_code_scanner_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 222993402004727C00105A15 /* wq_code_scanner_back@2x.png */; };
+		2277B62E2059000D0095126E /* RecognizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277B62D2059000D0095126E /* RecognizeViewController.m */; };
+		2277B631205900990095126E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277B630205900990095126E /* MainViewController.m */; };
+		2277B634205902100095126E /* ImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277B633205902100095126E /* ImagePickerController.m */; };
+		2277B636205906900095126E /* 123.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2277B635205906900095126E /* 123.jpg */; };
+		2277B639205908860095126E /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2277B638205908860095126E /* WebViewViewController.m */; };
 		22B4A6FC2004966000994353 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22B4A6FB2004966000994353 /* 1.jpg */; };
 		22B4A6FF200496FF00994353 /* UIImage+CreateQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B4A6FE200496FF00994353 /* UIImage+CreateQRCode.m */; };
 /* End PBXBuildFile section */
@@ -35,6 +40,15 @@
 		2229933D20046F2200105A15 /* QRScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRScannerViewController.m; sourceTree = "<group>"; };
 		2229933F2004727C00105A15 /* wq_code_scanner_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wq_code_scanner_line@2x.png"; sourceTree = "<group>"; };
 		222993402004727C00105A15 /* wq_code_scanner_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wq_code_scanner_back@2x.png"; sourceTree = "<group>"; };
+		2277B62C2059000D0095126E /* RecognizeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecognizeViewController.h; sourceTree = "<group>"; };
+		2277B62D2059000D0095126E /* RecognizeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecognizeViewController.m; sourceTree = "<group>"; };
+		2277B62F205900990095126E /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		2277B630205900990095126E /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		2277B632205902100095126E /* ImagePickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePickerController.h; sourceTree = "<group>"; };
+		2277B633205902100095126E /* ImagePickerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePickerController.m; sourceTree = "<group>"; };
+		2277B635205906900095126E /* 123.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 123.jpg; sourceTree = "<group>"; };
+		2277B637205908860095126E /* WebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewViewController.h; sourceTree = "<group>"; };
+		2277B638205908860095126E /* WebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewViewController.m; sourceTree = "<group>"; };
 		22B4A6FB2004966000994353 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		22B4A6FD200496FF00994353 /* UIImage+CreateQRCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+CreateQRCode.h"; sourceTree = "<group>"; };
 		22B4A6FE200496FF00994353 /* UIImage+CreateQRCode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CreateQRCode.m"; sourceTree = "<group>"; };
@@ -70,6 +84,7 @@
 		2229932420046E8200105A15 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
+				2277B62B2058FF230095126E /* RecognizeViewController */,
 				2229933B20046F0600105A15 /* QRScanner */,
 				2229932520046E8200105A15 /* AppDelegate.h */,
 				2229932620046E8200105A15 /* AppDelegate.m */,
@@ -80,6 +95,8 @@
 				2229933020046E8200105A15 /* LaunchScreen.storyboard */,
 				2229933320046E8200105A15 /* Info.plist */,
 				2229933420046E8200105A15 /* main.m */,
+				2277B62F205900990095126E /* MainViewController.h */,
+				2277B630205900990095126E /* MainViewController.m */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -96,6 +113,20 @@
 				22B4A6FE200496FF00994353 /* UIImage+CreateQRCode.m */,
 			);
 			path = QRScanner;
+			sourceTree = "<group>";
+		};
+		2277B62B2058FF230095126E /* RecognizeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2277B635205906900095126E /* 123.jpg */,
+				2277B62C2059000D0095126E /* RecognizeViewController.h */,
+				2277B62D2059000D0095126E /* RecognizeViewController.m */,
+				2277B632205902100095126E /* ImagePickerController.h */,
+				2277B633205902100095126E /* ImagePickerController.m */,
+				2277B637205908860095126E /* WebViewViewController.h */,
+				2277B638205908860095126E /* WebViewViewController.m */,
+			);
+			path = RecognizeViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2229933220046E8200105A15 /* LaunchScreen.storyboard in Resources */,
+				2277B636205906900095126E /* 123.jpg in Resources */,
 				22B4A6FC2004966000994353 /* 1.jpg in Resources */,
 				2229932F20046E8200105A15 /* Assets.xcassets in Resources */,
 				222993412004727C00105A15 /* wq_code_scanner_line@2x.png in Resources */,
@@ -176,7 +208,11 @@
 				2229932A20046E8200105A15 /* ViewController.m in Sources */,
 				2229933520046E8200105A15 /* main.m in Sources */,
 				2229932720046E8200105A15 /* AppDelegate.m in Sources */,
+				2277B631205900990095126E /* MainViewController.m in Sources */,
 				22B4A6FF200496FF00994353 /* UIImage+CreateQRCode.m in Sources */,
+				2277B639205908860095126E /* WebViewViewController.m in Sources */,
+				2277B62E2059000D0095126E /* RecognizeViewController.m in Sources */,
+				2277B634205902100095126E /* ImagePickerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

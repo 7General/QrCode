@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "QRScannerViewController.h"
 #import "UIImage+CreateQRCode.h"
+#import "RecognizeViewController.h"
 
 @interface ViewController ()<QRScannerCodeDelegate>
 
@@ -28,11 +29,66 @@
     [self.view addSubview:btn];
     
     
-    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 300, self.view.bounds.size.width, 400)];
-    [self.view addSubview:imageView];
-    imageView.image = [UIImage qrImageForString:@"wirte qrcode file" imageSize:self.view.bounds.size.width logoImageSize:100 withLogoName:@"1.jpg"];
+    UIButton *ScannBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    ScannBtn.frame = CGRectMake(100, 300, 200, 100);
+    [ScannBtn setTitle:@"系统识别二维码" forState:0];
+    ScannBtn.backgroundColor = [UIColor redColor];
+    [ScannBtn addTarget:self action:@selector(ScannCode) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:ScannBtn];
+
+//
+//    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 300, self.view.bounds.size.width, 400)];
+//    [self.view addSubview:imageView];
+//    imageView.image = [UIImage qrImageForString:@"wirte qrcode file" imageSize:self.view.bounds.size.width logoImageSize:100 withLogoName:@"1.jpg"];
+    
+    
+
+}
+
+/**
+ * 开始到结束的时间差
+ */
+- (BOOL)dateTimeDifferenceWithStartTime:(NSString *)startTime endTime:(NSString *)endTime{
+    NSDateFormatter *date = [[NSDateFormatter alloc]init];
+    [date setDateFormat:@"yyyy-MM-dd"];
+    NSDate *startD =[date dateFromString:startTime];
+    NSDate *endD = [date dateFromString:endTime];
+    NSTimeInterval start = [startD timeIntervalSince1970]*1;
+    NSTimeInterval end = [endD timeIntervalSince1970]*1;
+    NSTimeInterval value = end - start;
+//    int second = (int)value %60;//秒
+//    int minute = (int)value /60%60;
+//    int house = (int)value / (24 *3600)%3600;
+    int day = (int)value / (24 *3600);
+    if (abs(day) >= 7) {
+        return  YES;
+    }else {
+        return NO;
+    }
+//    NSString *str;
+//    if (day != 0) {
+//        str = [NSString stringWithFormat:@"耗时%d天%d小时%d分%d秒",day,house,minute,second];
+//    }else if (day==0 && house !=0) {
+//        str = [NSString stringWithFormat:@"耗时%d小时%d分%d秒",house,minute,second];
+//    }else if (day==0 && house==0 && minute!=0) {
+//        str = [NSString stringWithFormat:@"耗时%d分%d秒",minute,second];
+//    }else{
+//        str = [NSString stringWithFormat:@"耗时%d秒",second];
+//    }
     
 }
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    BOOL resStr = [self dateTimeDifferenceWithStartTime:@"2018-01-1" endTime:@"2018-01-8"];
+//    if (resStr) {
+//        NSLog(@"-------------------------");
+//    }else {
+//        NSLog(@"========================");
+//    }
+    
+}
+
+
 
 -(void)qrcode {
     NSLog(@"---");
@@ -50,6 +106,11 @@
     [alertView show];
 }
 
+
+-(void)ScannCode {
+    RecognizeViewController * recognize = [[RecognizeViewController alloc] init];
+    [self.navigationController pushViewController:recognize animated:YES];
+}
 
 
 @end
