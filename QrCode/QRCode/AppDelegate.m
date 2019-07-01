@@ -21,8 +21,13 @@
     self.window.backgroundColor = [UIColor whiteColor];
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:[MainViewController new]];
     self.window.rootViewController = nav;
+
     // 百日依山尽
     // 黄河入海流
+
+    // 西游记
+    // 白骨精
+
     return YES;
 }
 
