@@ -22,6 +22,7 @@
     UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:[MainViewController new]];
     self.window.rootViewController = nav;
 
+
     // 百日依山尽
     // 黄河入海流
 
